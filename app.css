@@ -1,0 +1,45 @@
+body{
+background-color: rgb(42, 42, 42);
+color: rgb(243, 240, 236);
+
+}
+
+.container{
+    display: flex;
+    flex-direction: center;
+    padding: 1em;
+    display: flex;
+    border-radius: 5px;
+}
+.reset{
+    color: whitesmoke;
+    width: 10em;
+    height: 3em;
+    background-color: rgb(83, 83, 240);
+    border: solid whitesmoke 2px;
+    border-radius: 5px;
+    margin-bottom: 5px;
+}
+
+.game{
+    display: flex; 
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding: 1em;
+    gap: 10px;
+   
+    height: fit-content;
+    width: fit-content;
+    max-width: 60%;
+    flex-wrap: wrap;
+}
+
+.cards {
+
+    border: solid 2px whitesmoke;
+    border-radius: 5px;
+    width: 200px;
+    height: 200px;
+
+}
