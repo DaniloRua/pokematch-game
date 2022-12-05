@@ -36,7 +36,9 @@ color: rgb(243, 240, 236);
 }
 
 .cards {
-    background-image: ;
+    background-image: url("https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/132.png");
+    background-repeat: no-repeat;
+    background-size: contain;
     border: solid 2px whitesmoke;
     border-radius: 5px;
     width: 200px;
