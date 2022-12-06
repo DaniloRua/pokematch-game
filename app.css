@@ -36,6 +36,7 @@ color: rgb(243, 240, 236);
 }
 
 .cards {
+    backface-visibility:visible;
     background-image: url("https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/132.png");
     background-repeat: no-repeat;
     background-size: contain;
@@ -43,5 +44,20 @@ color: rgb(243, 240, 236);
     border-radius: 5px;
     width: 200px;
     height: 200px;
+    transition: 0.5s ease-in-out;
 
 }
+
+.cards-back {
+    
+    background-repeat: no-repeat;
+    background-size: contain;
+    border: solid 2px whitesmoke;
+    border-radius: 5px;
+    width: 200px;
+    height: 200px;
+    transform: rotateY(180deg);
+    background-image: url("https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1.png");
+    transition: 1s ease-in-out;
+}
+
