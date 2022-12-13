@@ -33,7 +33,7 @@ let doublePromises = promises.concat(promises)
     console.log(pokemon)
     let pokeName = document.createElement('p');
     pokeName.setAttribute('id',`${pokemon.name}`);
-    card.appendChild(pokeName).style= "display:flex; margin: 1vh; color: white;";
+    card.appendChild(pokeName).style= " margin: 1vh; color: white;";
     pokeName.innerHTML = `${pokemon.name}`;
 
 
@@ -54,7 +54,7 @@ let doublePromises = promises.concat(promises)
 
         pokemonImg.setAttribute('src',`${spritesUnits['front_default']}`);
         
-        card.appendChild(pokemonImg).style="width:9em ;background-size: contain"
+        card.appendChild(pokemonImg).style="width:9em ;background-size: contain; background"
     
     
 
