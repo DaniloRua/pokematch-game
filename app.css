@@ -35,19 +35,11 @@ color: rgb(243, 240, 236);
     flex-wrap: wrap;
 }
 
-.cards {
-    backface-visibility:visible;
-    background-image: url(./pokeball.png);
-    background-repeat: no-repeat;
-    background-size: contain;
-    border: solid 2px whitesmoke;
-    border-radius: 5px;
-    width: 200px;
-    height: 200px;
-    transition: 0.5s ease-in-out; 
+p {
+    display: none;
 }
-
-.cards-back {
+.cards {
+      
     
     background-repeat: no-repeat;
     background-size: contain;
@@ -55,6 +47,13 @@ color: rgb(243, 240, 236);
     border-radius: 5px;
     width: 200px;
     height: 200px;
+    transition: 0.5s ease-in-out; 
+   
+}
+
+.cards-back{
+
+
     transform: rotateY(180deg);
     transition: 1s ease-in-out;
 }
