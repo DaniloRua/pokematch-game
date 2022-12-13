@@ -33,23 +33,28 @@ let doublePromises = promises.concat(promises)
     console.log(pokemon)
     let pokeName = document.createElement('p');
     pokeName.setAttribute('id',`${pokemon.name}`);
-    card.appendChild(pokeName).style= "color: white";
+    card.appendChild(pokeName).style= "display:flex; margin: 1vh; color: white;";
     pokeName.innerHTML = `${pokemon.name}`;
+
+
+    console.log(pokeName);
     
-    console.log(pokemon.url)
-    
+
+
+
+
+
     const pokemonUnitsUrl = pokemon['url']
 
     const Sprites = fetch(pokemonUnitsUrl).then((data) => data.json()).then((sprites) => { 
         
         const  spritesUnits = sprites['sprites']
-        console.log(spritesUnits['front_default']);
-        
+       
         const pokemonImg = document.createElement('img');
 
         pokemonImg.setAttribute('src',`${spritesUnits['front_default']}`);
         
-        card.appendChild(pokemonImg)
+        card.appendChild(pokemonImg).style="width:9em ;background-size: contain"
     
     
 
@@ -91,35 +96,6 @@ let doublePromises = promises.concat(promises)
 
 
 
-
-
-
-
-
-
-
-
-
-/*
-
-
-//Display... test
-function ElementFromHtml(html) {
-    const template = document.createElement("template");
-    template.innerHTML = html.trim();
-    return template.content.firstElementChild
-}
-const decoy = ElementFromHtml(`
-<h2>${pokemonPromises.name}</h2>
-`)
-
-*/
-/*
-// fazer uma funcao random para concatenar no link de download de sprites
-//jogar os valores em um array 
-// designar cada valor do array para 6 cards e duplicar
-//utilizar a funca random para sortear a posicao de cada pokemon
-*/
 // reload the game
 function resetGame() {
     document.location.reload();

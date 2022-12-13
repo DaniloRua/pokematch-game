@@ -1,4 +1,11 @@
+@font-face {
+    font-family: pokemon;
+    src: url(./pokemon.ttf);
+}
+
+
 body{
+font-family: pokemon;
 background-color: rgb(42, 42, 42);
 color: rgb(243, 240, 236);
 
@@ -35,12 +42,10 @@ color: rgb(243, 240, 236);
     flex-wrap: wrap;
 }
 
-p {
-    display: none;
-}
 .cards {
-      
     
+    justify-content: center;
+    align-items: center;
     background-repeat: no-repeat;
     background-size: contain;
     border: solid 2px whitesmoke;
