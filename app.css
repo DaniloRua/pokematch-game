@@ -14,8 +14,8 @@ color: rgb(243, 240, 236);
 
 .container{
     font-family: pokemon;
-    color: blue;
-    
+    color: rgb(242, 255, 0);
+    -webkit-text-stroke: 1px rgb(0, 81, 255);
     display: flex;
     flex-direction: center;
     padding: 1em;
@@ -26,13 +26,14 @@ color: rgb(243, 240, 236);
     font-family: pokemon;
     font-size:large;
     letter-spacing: 3px;
-    color: rgb(72, 56, 215);
+    color: rgb(50, 50, 237);
     width: 10em;
     height: 3em;
     background-color: rgb(247, 255, 0);
     border: solid rgb(89, 58, 211) 2px;
     border-radius: 5px;
     margin-bottom: 5px;
+    box-shadow: 3px 3px blue;
 }
 
 .game{
@@ -41,34 +42,57 @@ color: rgb(243, 240, 236);
     align-items: center;
     justify-content: center;
     padding: 1em;
-    gap: 10px;
+    gap: 2em;
     height: fit-content;
     width: fit-content;
     max-width: 60%;
     flex-wrap: wrap;
+}
+p{
+    display: none;
+    animation: none;
+    transition: none;
+}
+img{
+    display:none;
+    animation: none;
+    transition: none;
+}
+
+.sprite{
+    display: block;
+    animation: none;
+    color: rgb(255, 255, 0);
+    -webkit-text-stroke: 1px blue;
 }
 
 .cards {
     
     display: flex;
     flex-direction: column;
-    background-image: url(/pokeball.png);
+    background-image: url(/pokeball_png.png);
     align-items: center;
     justify-content: center;
     background-repeat: no-repeat;
     background-size: contain;
-    
-    border-radius: 150px;
+    border-radius: 20px;
     width: 200px;
     height: 200px;
-    transition: 0.5s ease-in-out; 
-   
+
+    
 }
 
 .cards-back{
-
-
-    transform: rotateY(180deg);
-    transition: 1s ease-in-out;
+    
+    background-image: none;
+    visibility: hidden;
+    transition: ease-in-out 2s;
+   
 }
 
+@keyframes fade {
+    from { opacity:100%
+}
+    to{
+        opacity: 0%;
+    }}
