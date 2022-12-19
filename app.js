@@ -40,10 +40,13 @@ const pokemonPromises = fetch(PokeAPI).then((data) => data.json())
                     pokemonImg.classList.toggle('sprite');
                     pokeName.classList.toggle('sprite');
                     
-                    card1 = card;
+                    card1 = card
                     card1.style.pointerEvents = "none";
+                    card1 = [card]
                     console.log(card1)
-                 
+
+                    
+                    // async await callback
                     
         
                 })

@@ -67,7 +67,7 @@ img {
 .cards {
   display: flex;
   flex-direction: column;
-  background-image: url(/pokeball_pixel.png);
+  background-image: url(./assets/pokeball_pixel.PNG);
   align-items: center;
   justify-content: center;
   background-repeat: no-repeat;
@@ -79,13 +79,4 @@ img {
 .cards-back {
   background-image: none;
 
-}
-
-@keyframes fade {
-  from {
-    opacity: 100%;
-  }
-  to {
-    opacity: 0%;
-  }
 }
