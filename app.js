@@ -2,6 +2,8 @@ const PokeAPI = "https://pokeapi.co/api/v2/pokemon/"
 const gameBoard = document.getElementById('game');
 let cards = document.querySelectorAll('.cards');
 
+let card1;
+let card2;
 
 
 
@@ -13,12 +15,12 @@ const pokemonPromises = fetch(PokeAPI).then((data) => data.json())
         const promises = pokemonPromises.results.slice(0, -14)
         let doublePromises = promises.concat(promises)
         console.log(doublePromises)
+        
         cards.forEach((card, index) => {
-
             const pokemon = doublePromises[index]
             let pokeName = document.createElement('p');
             pokeName.setAttribute('id', `${pokemon.name}`);
-            card.appendChild(pokeName).style = "margin: 1vh; color: white";
+            card.appendChild(pokeName).style = "margin-bottom:1px; color: yellow; margin: 0px; padding: 0px";
             pokeName.innerHTML = `${pokemon.name}`
             const pokemonUnitsUrl = pokemon['url']
             fetch(pokemonUnitsUrl).then((data) => data.json()).then(function sprites(sprites) {
@@ -26,32 +28,31 @@ const pokemonPromises = fetch(PokeAPI).then((data) => data.json())
                 const pokemonImg = document.createElement('img');
                 pokemonImg.setAttribute('src', `${spritesUnits['front_default']}`);
                 pokemonImg.setAttribute('id', 'frontCard');
-                card.appendChild(pokemonImg).style = "width:9em ;background-size: contain;"
+                card.appendChild(pokemonImg).style = "width:10em;height:10em;margin-top:0px"
 
+                
+                 // flip cards
++
                 card.addEventListener('click', function () {
 
+               
                     card.classList.toggle('cards-back');
                     pokemonImg.classList.toggle('sprite');
                     pokeName.classList.toggle('sprite');
-                    setTimeout(() => { card.classList.toggle('cards-back'); pokemonImg.classList.toggle('sprite');pokeName.classList.toggle('sprite');
-
-                }, 2000)
+                    
+                    card1 = card;
+                    card1.style.pointerEvents = "none";
+                    console.log(card1)
+                 
+                    
+        
                 })
+
+                  
+                 
             })
-    
-
         })
-        
-
-        
     })
-
-
-
-// flip cards
-
-
-
 
 
 
@@ -69,26 +70,8 @@ cards.forEach(function (card) {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 // reload the game
 function resetGame() {
     document.location.reload();
 }
 
-
-function stopToggle(f) {
-    clearTimeout(f)
-}
