@@ -4,6 +4,7 @@ let cards = document.querySelectorAll('.cards');
 
 let card1;
 let card2;
+let pairs = 0;
 
 
 
@@ -36,17 +37,56 @@ const pokemonPromises = fetch(PokeAPI).then((data) => data.json())
                 card.addEventListener('click', function () {
 
                
-                    card.classList.toggle('cards-back');
-                    pokemonImg.classList.toggle('sprite');
-                    pokeName.classList.toggle('sprite');
-                    
-                    card1 = card
-                    card1.style.pointerEvents = "none";
-                    card1 = [card]
-                    console.log(card1)
+                    if ( !card1 && !card2 ) {
 
+                        card1 = card;                
+                        card.classList.toggle('cards-back');
+                        pokemonImg.classList.toggle('sprite');
+                        pokeName.classList.toggle('sprite');
+                       
+                    } else if ( card1 && !card2 ) {
+                     
+                        card2 = card; 
+
+                        card.classList.toggle('cards-back');
+                        pokemonImg.classList.toggle('sprite');
+                        pokeName.classList.toggle('sprite');
+                       
+                        
+                        if (card1.innerHTML === card2.innerHTML){
+                       
+                        console.log(card1)
+                        console.log(card2)
+                            card1.style.pointerEvents='none';
+                            card2.style.pointerEvents='none';
+                            card1= null;
+                            card2= null;
+                            pairs += 1;
+                            console.log(pairs)
+                        }
+                            if(pairs >= 6){
+                               setTimeout(() => alert('GAME OVER! F5 to replay'), 2000)
+                            
+                        } else{
+                            console.log(card1)
+                            console.log(card2)
+    
+                            card1.classList.toggle('.cards');
+                            card2.classList.toggle('.cards');
+                            pokemonImg.classList.toggle('sprite');
+                            pokeName.classList.toggle('sprite');
+                            card1 = null;  
+                            card2 = null;
+                        }
+                        
+                    }
+
+                   
                     
-                    // async await callback
+                    card1 = card;
+                    card1.style.pointerEvents = "none";
+                    
+
                     
         
                 })
@@ -64,13 +104,14 @@ const pokemonPromises = fetch(PokeAPI).then((data) => data.json())
 
 
 //mixing the cards every reload
+/*
 cards.forEach(function (card) {
     let mixing = Math.floor(Math.random() * 12)
     card.style.order = mixing
     //
 });
 
-
+*/
 
 
 // reload the game
