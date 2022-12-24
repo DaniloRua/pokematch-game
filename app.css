@@ -48,31 +48,30 @@ body {
 }
 p {
   display: none;
-  animation: none;
+
   transition: none;
 }
 img {
   display: none;
-  animation: none;
+
   transition: none;
 }
 
 .sprite {
   display: block;
-  animation: none;
   color: rgb(255, 255, 0);
   -webkit-text-stroke: 1px blue;
 }
 
 .cards {
-  display: flex;
+  display: grid;
   flex-direction: column;
-  background-image: url(./assets/pokeball_pixel.PNG);
+  background-image: url(./assets/pokeball_pixel.png);
   align-items: center;
   justify-content: center;
   background-repeat: no-repeat;
   background-size: contain;
-  width: 10em;
+  width: 5em;
   height: 10em;
 }
 

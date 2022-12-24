@@ -5,8 +5,8 @@ let cards = document.querySelectorAll('.cards');
 let card1;
 let card2;
 let pairs = 0;
-
-
+let img1
+let name1;
 
 //name and sprites
 const pokemonPromises = fetch(PokeAPI).then((data) => data.json())
@@ -28,7 +28,7 @@ const pokemonPromises = fetch(PokeAPI).then((data) => data.json())
                 const spritesUnits = sprites['sprites']
                 const pokemonImg = document.createElement('img');
                 pokemonImg.setAttribute('src', `${spritesUnits['front_default']}`);
-                pokemonImg.setAttribute('id', 'frontCard');
+                pokemonImg.setAttribute('id', 'imgCard');
                 card.appendChild(pokemonImg).style = "width:10em;height:10em;margin-top:0px"
 
                 
@@ -41,7 +41,9 @@ const pokemonPromises = fetch(PokeAPI).then((data) => data.json())
 
                         card1 = card;                
                         card.classList.toggle('cards-back');
+                        img1 =pokemonImg
                         pokemonImg.classList.toggle('sprite');
+                        name1 =  pokeName
                         pokeName.classList.toggle('sprite');
                        
                     } else if ( card1 && !card2 ) {
@@ -53,8 +55,8 @@ const pokemonPromises = fetch(PokeAPI).then((data) => data.json())
                         pokeName.classList.toggle('sprite');
                        
                         
-                        if (card1.innerHTML === card2.innerHTML){
-                       
+                        if (card1.id === card2.id){
+                       console.log(card1.id)
                         console.log(card1)
                         console.log(card2)
                             card1.style.pointerEvents='none';
@@ -66,33 +68,36 @@ const pokemonPromises = fetch(PokeAPI).then((data) => data.json())
                         }
                             if(pairs >= 6){
                                setTimeout(() => alert('GAME OVER! F5 to replay'), 2000)
-                            
-                        } else{
+                            // open a modal window
+                        } else {
                             console.log(card1)
                             console.log(card2)
-    
-                            card1.classList.toggle('.cards');
-                            card2.classList.toggle('.cards');
-                            pokemonImg.classList.toggle('sprite');
-                            pokeName.classList.toggle('sprite');
-                            card1 = null;  
-                            card2 = null;
+                            setTimeout(() =>{
+                              
+                             
+
+
+                                card2.classList.add('cards');
+                                card2.classList.remove('cards-back');
+                                pokemonImg.classList.remove('sprite');
+                                pokeName.classList.remove('sprite');
+                              
+                                card1.classList.add('cards');
+                                card1.classList.remove('cards-back');
+                                pokemonImg.classList.remove('sprite');
+                                pokeName.classList.remove('sprite');
+                                   
+                                img1.classList.remove('sprite');
+                                name1.classList.remove('sprite');
+                                card1 = null;
+                                card2 = null;
+                                 
+                                
+                            },1500)
                         }
-                        
                     }
-
-                   
-                    
-                    card1 = card;
-                    card1.style.pointerEvents = "none";
-                    
-
-                    
-        
                 })
 
-                  
-                 
             })
         })
     })
