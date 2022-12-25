@@ -18,7 +18,7 @@ const pokemonPromises = fetch(PokeAPI).then((data) => data.json())
             const pokemon = doublePromises[index]
             let pokeName = document.createElement('p');
             pokeName.setAttribute('id', `${pokemon.name}`);
-            card.appendChild(pokeName).style = "margin-bottom:1px; color: yellow; margin: 0px; padding: 0px";
+            card.appendChild(pokeName).style = "margin:1px;height:0.7rem; width: 0.7rem; color: yellow; margin: 0px; padding: 0px";
             pokeName.innerHTML = `${pokemon.name}`
             const pokemonUnitsUrl = pokemon['url']
             fetch(pokemonUnitsUrl).then((data) => data.json()).then(function sprites(sprites) {
@@ -26,7 +26,7 @@ const pokemonPromises = fetch(PokeAPI).then((data) => data.json())
                 const pokemonImg = document.createElement('img');
                 pokemonImg.setAttribute('src', `${spritesUnits['front_default']}`);
                 pokemonImg.setAttribute('id', 'imgCard');
-                card.appendChild(pokemonImg).style = "width:10em;height:10em;margin-top:0px"
+                card.appendChild(pokemonImg).style = "width:7rem;height:7rem;margin:5px;padding:5px"
                     // flip cards and match them
                     card.addEventListener('click', function () {
                         if (!card1 && !card2) {
@@ -42,15 +42,11 @@ const pokemonPromises = fetch(PokeAPI).then((data) => data.json())
                             pokemonImg.classList.toggle('sprite');
                             pokeName.classList.toggle('sprite');
                             if (card1.id === card2.id) {
-                                console.log(card1.id)
-                                console.log(card1)
-                                console.log(card2)
                                 card1.style.pointerEvents = 'none';
                                 card2.style.pointerEvents = 'none';
                                 card1 = null;
                                 card2 = null;
-                                pairs += 1;
-                                console.log(pairs)
+                                pairs += 1
                             }
                             if (pairs >= 6) {
                                 setTimeout(() => alert('GAME OVER! F5 to replay'), 2000)
@@ -75,11 +71,9 @@ const pokemonPromises = fetch(PokeAPI).then((data) => data.json())
                             }
                         }
                     })
-
             })
         })
     })
-
 //mixing the cards every reload
 cards.forEach(function (card) {
     let mixing = Math.floor(Math.random() * 12)
