@@ -2,24 +2,16 @@
   font-family: pokemon;
   src: url(./pokemon.ttf);
 }
-
-*{
-  border: 1px red solid;
-}
 body {
-
   letter-spacing: 3px;
   background-color: rgb(42, 42, 42);
   color: rgb(243, 240, 236);
- 
 }
-h1{
+h1 {
   margin: 0px;
   min-width: 1em;
-  
 }
-.container {  
-  
+.container {
   font-family: pokemon;
   color: rgb(242, 255, 0);
   -webkit-text-stroke: 1px rgb(0, 81, 255);
@@ -31,10 +23,8 @@ h1{
   padding: 0.5em;
   width: 70vh;
   height: 100vh;
- 
 }
 .reset {
-  
   font-family: pokemon;
   font-size: large;
   letter-spacing: 0.2em;
@@ -49,12 +39,10 @@ h1{
 }
 
 .game {
-
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  
   padding: 1em;
   gap: 1em;
   width: 100%;
@@ -75,15 +63,14 @@ img {
   height: 1em;
   transition: none;
 }
-
 .sprite {
-  display: block;
+  display: flex;
+  align-items: center;
   color: rgb(255, 255, 0);
   -webkit-text-stroke: 1px blue;
 }
-
 .cards {
-  display: grid;
+  display: flex;
   flex-direction: column;
   background-image: url(./assets/pokeball_pixel.png);
   align-items: center;
@@ -96,5 +83,4 @@ img {
 
 .cards-back {
   background-image: none;
-
 }
