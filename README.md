@@ -4,7 +4,7 @@
 
 > Project:
 
-    build a simple memory game using Pokemon API for sprites and names of pokemon. this project was built to practice loops, fetch API and Multipath decision statement.
+    Build a simple memory game using Pokemon API for sprites and names of pokemon. this project was built to practice loops, fetch API and Multipath decision statement.
 
 ## tools
 
