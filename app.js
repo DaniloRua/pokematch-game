@@ -11,7 +11,7 @@ let name1;
 const pokemonPromises = fetch(PokeAPI).then((data) => data.json())
     .then((pokemonPromises) => {
         const promises = pokemonPromises.results.slice(0, -14)
-         //selecting the number of pokemon
+        //selecting the number of pokemon
         let doublePromises = promises.concat(promises) // dubble to make match
         // create a loop to insert Sprites and names
         cards.forEach((card, index) => {
