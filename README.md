@@ -14,7 +14,7 @@
     -Git and Github
 
 ## Take a look at
-[https://danilorua.github.io/pokematch-game/]
+https://danilorua.github.io/pokematch-game/
 
 ## contact 
 
